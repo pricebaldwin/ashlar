@@ -1,0 +1,21 @@
+{
+  "name": "@ashlar/cli",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "ash": "./dist/bin.mjs"
+  },
+  "scripts": {
+    "dev": "tsx src/bin.ts",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ashlar/core": "workspace:*",
+    "@ashlar/env-default": "workspace:*",
+    "commander": "^15.0.0"
+  },
+  "devDependencies": {
+    "tsdown": "^0.23.0"
+  }
+}

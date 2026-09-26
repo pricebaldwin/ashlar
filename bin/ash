@@ -1,0 +1,5 @@
+#!/bin/sh
+# Runs the ash CLI from source. `pnpm link` in the repo root puts it on PATH (see README).
+# Keeps the caller's cwd, unlike `pnpm ash`, which runs from packages/cli.
+root="$(cd "$(dirname "$0")/.." && pwd)"
+exec "$root/node_modules/.bin/tsx" "$root/packages/cli/src/bin.ts" "$@"

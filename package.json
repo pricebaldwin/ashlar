@@ -1,0 +1,33 @@
+{
+  "name": "ashlar",
+  "private": true,
+  "type": "module",
+  "author": "price <price@pricebaldwin.com>",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@11.20.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "bin": {
+    "ash": "./bin/ash"
+  },
+  "scripts": {
+    "ash": "pnpm --filter @ashlar/cli dev",
+    "link-cli": "pnpm add -g link:$PWD",
+    "build": "pnpm -r build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "oxlint",
+    "format": "prettier --write .",
+    "typecheck": "pnpm -r typecheck",
+    "check": "pnpm typecheck && oxlint"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2",
+    "oxlint": "^1.78.0",
+    "prettier": "^3.9.6",
+    "vitest": "^4.1.10",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.21.0"
+  }
+}
