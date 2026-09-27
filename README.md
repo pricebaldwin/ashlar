@@ -1,5 +1,8 @@
 # Ashlar
 
+> [!WARNING]
+> Ashlar is in very early solo development and not ready for real use. Commands, flags, and the library format will change without notice, and most commands do nothing yet.
+
 Ashlar keeps small, trusted, versioned units of code in git libraries. You change them in disposable workspaces, ship them back with a verified build, and query them as one dependency graph across libraries.
 
 Status: scaffolding. The `ash` CLI parses every planned command, and each one exits with `not implemented yet`.
@@ -47,11 +50,3 @@ Without the link, `./bin/ash --help` from the repo root does the same thing. `pn
 | `packages/cli`         | `@ashlar/cli`, the `ash` binary                                                                        |
 | `packages/core`        | `@ashlar/core`, the domain logic: libraries, workspaces, graph, ship, publish                          |
 | `packages/env-default` | `@ashlar/env-default`, the default env (TypeScript, Vite, Vitest, Oxlint, Storybook) and its templates |
-
-## Architecture notes
-
-- **Monorepo, CLI first.** The CLI, core, and default env are separate packages. The CLI only parses arguments and prints; the logic goes in core so a later UI (for example a graph browser) can reuse it.
-- **No web app, database, or hosting yet.** The repo started as a forge TanStack Start + Prisma/SQLite + Netlify scaffold. All of that was removed to keep the start light, since the plan is CLI first. It is in git history (commit `7d3d2f1`) if a UI such as a graph browser is wanted later.
-- **The default env is its own package** because each library has exactly one env, chosen per library. A second env becomes a sibling package, not a flag in core.
-- **The CLI surface is treated as the public API.** It uses Stricli, so each command's flags and arguments are declared as data and checked against the command's types. A snapshot test of every command's help text turns any change to the surface into a visible diff. Interactive questions use `@clack/prompts`, and every question can also be answered by a flag so scripts and CI never block on a prompt.
-- **Only the CLI has a build.** The other packages export `.ts` source and tsdown bundles them into the CLI. This keeps the workspace build-free until a package needs to be published on its own.
