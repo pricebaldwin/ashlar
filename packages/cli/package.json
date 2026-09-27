@@ -13,7 +13,8 @@
   "dependencies": {
     "@ashlar/core": "workspace:*",
     "@ashlar/env-default": "workspace:*",
-    "commander": "^15.0.0"
+    "@clack/prompts": "^1.8.1",
+    "@stricli/core": "^1.3.0"
   },
   "devDependencies": {
     "tsdown": "^0.23.0"

@@ -1,11 +1,26 @@
-import type { Command } from 'commander'
+import { buildCommand } from '@stricli/core'
+import type { AshContext } from '../context.ts'
 import { notImplemented } from '../not-implemented.ts'
 
-// Spec W1-W3.
-export function registerInit(program: Command): void {
-  program
-    .command('init')
-    .description('Set up the current directory as a workspace')
-    .option('--library <path-or-remote>', 'library the workspace uses')
-    .action(() => notImplemented('init'))
+interface InitFlags {
+  readonly library?: string
 }
+
+// Spec W1-W3.
+export const initCommand = buildCommand({
+  func(this: AshContext, _flags: InitFlags) {
+    return notImplemented('init')
+  },
+  parameters: {
+    flags: {
+      library: {
+        kind: 'parsed',
+        parse: String,
+        placeholder: 'path-or-remote',
+        brief: 'Library the workspace uses',
+        optional: true,
+      },
+    },
+  },
+  docs: { brief: 'Set up the current directory as a workspace' },
+})

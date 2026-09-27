@@ -1,4 +1,10 @@
 #!/usr/bin/env node
-import { createProgram } from './program.ts'
+import { run } from '@stricli/core'
+import { app } from './app.ts'
+import { clackPrompter } from './prompt.ts'
 
-await createProgram().parseAsync()
+await run(app, process.argv.slice(2), {
+  process,
+  prompt: clackPrompter,
+  interactive: Boolean(process.stdin.isTTY && process.stdout.isTTY),
+})

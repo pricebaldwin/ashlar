@@ -1,0 +1,150 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`app > keeps the documented surface stable > ash add 1`] = `
+"USAGE
+  ash add <block[@version]>
+  ash add --help
+
+Pull a block version into the workspace and record it as the base
+
+FLAGS
+  -h --help  Print help information and exit
+
+ARGUMENTS
+  block[@version]  Block to add, latest version by default
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash build 1`] = `
+"USAGE
+  ash build [--isolated]
+  ash build --help
+
+Build blocks in the workspace
+
+FLAGS
+     [--isolated]  Install only declared dependencies and build in isolation
+  -h  --help       Print help information and exit
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash create 1`] = `
+"USAGE
+  ash create <template> <name>
+  ash create --help
+
+Create a new block from a template in the library env
+
+FLAGS
+  -h --help  Print help information and exit
+
+ARGUMENTS
+  template  Template in the library env
+  name      Name of the new block
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash graph 1`] = `
+"USAGE
+  ash graph <query>
+  ash graph --help
+
+Query the dependency graph across libraries
+
+FLAGS
+  -h --help  Print help information and exit
+
+ARGUMENTS
+  query  Graph query
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash init 1`] = `
+"USAGE
+  ash init [--library path-or-remote]
+  ash init --help
+
+Set up the current directory as a workspace
+
+FLAGS
+     [--library]  Library the workspace uses
+  -h  --help      Print help information and exit
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash install 1`] = `
+"USAGE
+  ash install <npm-module> <block>
+  ash install --help
+
+Install an npm package into one block
+
+FLAGS
+  -h --help  Print help information and exit
+
+ARGUMENTS
+  npm-module  npm package to install
+  block       Block that depends on it
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash publish 1`] = `
+"USAGE
+  ash publish [<library>]
+  ash publish --help
+
+Push library versions the registry does not have yet
+
+FLAGS
+  -h --help  Print help information and exit
+
+ARGUMENTS
+  [library]  Library to publish, all by default
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash ship 1`] = `
+"USAGE
+  ash ship [--major] [--minor] [--patch] [--scratch] <block>...
+  ash ship --help
+
+Verify changed blocks, assign versions, and commit them to the library
+
+FLAGS
+     [--major]    Bump the major version
+     [--minor]    Bump the minor version
+     [--patch]    Bump the patch version (default)
+     [--scratch]  Ship to the library scratch area, unverified
+  -h  --help      Print help information and exit
+
+ARGUMENTS
+  block...  Blocks to ship, every changed block by default
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash test 1`] = `
+"USAGE
+  ash test
+  ash test --help
+
+Test blocks in the workspace
+
+FLAGS
+  -h --help  Print help information and exit
+"
+`;
+
+exports[`app > keeps the documented surface stable > ash update 1`] = `
+"USAGE
+  ash update [<block>]
+  ash update --help
+
+Pull newer library or scratch versions into the workspace
+
+FLAGS
+  -h --help  Print help information and exit
+
+ARGUMENTS
+  [block]  Block to update, all by default
+"
+`;
